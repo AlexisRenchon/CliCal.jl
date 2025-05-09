@@ -1,6 +1,9 @@
 export makeapp
 
-function makeapp(loaded_data)
+function makeapp(path_to_eki_file)
+
+    loaded_data = load_and_process_data(path_to_eki_file)
+
     app = App(title="CliCal v0.3.0") do
         # Initialize figure
         fig = Figure(size = (2500, 1800), fontsize = 22)

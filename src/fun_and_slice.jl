@@ -110,13 +110,11 @@ function cosine_weighted_global_mean(values::Vector{Float64}, lats::Vector{Float
 end
 
 # Function to load data and process it
-function load_and_process_data(eki_file, prior_file, variable_file)
-    println("Loading: EKI=$(eki_file), Prior=$(prior_file)")
+function load_and_process_data(eki_file)
+    println("Loading: EKI=$(eki_file)")
 
-    # Load eki object, locations, prior
+    # Load eki object
     eki = JLD2.load_object(eki_file)
-    prior = include(prior_file)
-    variable_list_file = include(variable_file)
 
     # Get basic information
     n_ensembles = EKP.get_N_ens(eki)
@@ -131,6 +129,9 @@ function load_and_process_data(eki_file, prior_file, variable_file)
     obs_series = EKP.get_observation_series(eki)
     y_obs = obs_series.observations
     y_all = [EKP.get_obs(y_obs[i]) for i in 1:n_iterations]
+
+    # Get prior, variable_list, and locations
+    prior, variable_list, locations = EKP.obs_series.metadata
 
     # Get all gamma (noise)
     noise = EKP.get_obs_noise_cov(eki, build = false)
