@@ -21,5 +21,7 @@ CliCal should automatically open in your browser (URL: http://localhost:9384/bro
 
 This package will be moved to ClimaCalibrate.jl as an extension when ready.
 It currently works only for ClimaLand.jl calibration.
+
 Once we have common flattening and reconstruction of diagnostics, this package
-will be refactored to work with ClimaLand, ClimaAtmos, and ClimaOcean.
+will be refactored (change to `src/fun_and_slice.jl`) to work with
+ClimaLand, ClimaAtmos, and ClimaOcean.
