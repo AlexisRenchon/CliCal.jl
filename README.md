@@ -25,3 +25,5 @@ It currently works only for ClimaLand.jl calibration.
 Once we have common flattening and reconstruction of diagnostics, this package
 will be refactored (change to `src/fun_and_slice.jl`) to work with
 ClimaLand, ClimaAtmos, and ClimaOcean.
+
+See [PR](https://github.com/CliMA/ClimaAnalysis.jl/pull/269)

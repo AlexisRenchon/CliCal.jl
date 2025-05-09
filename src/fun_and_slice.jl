@@ -7,6 +7,11 @@ export RMSE,
        load_and_process_data
 
 
+# Notes: slicevar and add_seasonal... will be deprecated once we have a common
+# flattening and reconstruction of diagnostics. (for Atmos and Land).
+# The code will then need to be refactored, and will work for Atmos and Land.
+# See PR https://github.com/CliMA/ClimaAnalysis.jl/pull/269
+
 function RMSE(x, z)
     return sqrt(mean((x.-z).^2))
 end
