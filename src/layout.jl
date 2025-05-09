@@ -1,4 +1,4 @@
-export layout()
+export layout
 
 function layout(menu_var, menu_iter, menu_m, menu_season, loaded_data)
     DOM.div(

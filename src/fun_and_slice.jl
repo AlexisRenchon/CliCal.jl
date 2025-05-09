@@ -4,7 +4,8 @@ export RMSE,
        add_seasonal_access_g,
        add_seasonal_access_gamma,
        cosine_weighted_global_mean,
-       load_and_process_data,
+       load_and_process_data
+
 
 function RMSE(x, z)
     return sqrt(mean((x.-z).^2))
