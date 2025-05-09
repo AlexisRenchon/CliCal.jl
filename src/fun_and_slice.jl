@@ -119,7 +119,7 @@ function load_and_process_data(eki_file)
     # Get basic information
     n_ensembles = EKP.get_N_ens(eki)
     n_iterations = EKP.get_N_iterations(eki)
-    errors = eki.error
+    errors = eki.error_metrics["loss"]
     normalized_errors = errors ./ errors[1] .* 100
 
     # Get all g
@@ -131,7 +131,7 @@ function load_and_process_data(eki_file)
     y_all = [EKP.get_obs(y_obs[i]) for i in 1:n_iterations]
 
     # Get prior, variable_list, and locations
-    prior, variable_list, locations = EKP.obs_series.metadata
+    prior, variable_list, locations = obs_series.metadata
 
     # Get all gamma (noise)
     noise = EKP.get_obs_noise_cov(eki, build = false)
