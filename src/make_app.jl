@@ -63,6 +63,6 @@ function makeapp(path_to_eki_file)
         # Update display
         maps = update_fig(menu_var, menu_iter, menu_m, menu_season, fig, ax_y, ax_g, ax_gamma, ax_anomalies, ax_sm, ax_gy, loaded_data["seasonal_g_data"], loaded_data["seasonal_y_data"], loaded_data["seasonal_gamma_data"], loaded_data["lons"], loaded_data["lats"])
 
-        return layout(menu_var, menu_iter, menu_m, menu_season, loaded_data)
+        return layout(menu_var, menu_iter, menu_m, menu_season, loaded_data, maps)
     end
 end

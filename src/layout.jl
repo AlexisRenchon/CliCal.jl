@@ -1,6 +1,6 @@
 export layout
 
-function layout(menu_var, menu_iter, menu_m, menu_season, loaded_data)
+function layout(menu_var, menu_iter, menu_m, menu_season, loaded_data, maps)
     DOM.div(
             style="display: grid; grid-template-columns: 300px 380px 1fr; gap: 20px; width: 100%;",
             # Left column
