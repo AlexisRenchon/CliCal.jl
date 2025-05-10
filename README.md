@@ -15,7 +15,8 @@ julia> makeapp("path/to/eki_file.jld2")
 ```
 
 CliCal should automatically open in your browser (URL: http://localhost:9384/browser-display)
-![image](https://github.com/user-attachments/assets/3fefb111-e9a2-4cec-ac65-3973dcca4f0e)
+
+![image](https://github.com/user-attachments/assets/156df308-ea98-460b-9044-92e2a00603ab)
 
 ### Notes
 
