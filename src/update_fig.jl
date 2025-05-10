@@ -22,10 +22,10 @@ function update_fig(menu_var, menu_iter, menu_m, menu_season, fig, ax_y, ax_g, a
     max_ano = @lift(maximum($anomalies))
     limits_ano = (-30, 30)
 
-    p_g = heatmap!(ax_g, lons, lats, g, colorrange = limits_p)
-    p_y = heatmap!(ax_y, lons, lats, y, colorrange = limits_p)
-    p_gamma = heatmap!(ax_gamma, lons, lats, Γ, colorrange = (0,50))
-    p_ano = heatmap!(ax_anomalies, lons, lats, anomalies, colorrange = limits_ano, colormap = cgrad(:bluesreds, categorical = false), highclip = :red, lowclip = :blue)
+    p_g = surface!(ax_g, lons, lats, g, colorrange = limits_p, shading = NoShading)
+    p_y = surface!(ax_y, lons, lats, y, colorrange = limits_p, shading = NoShading)
+    p_gamma = surface!(ax_gamma, lons, lats, Γ, colorrange = (0,50), shading = NoShading)
+    p_ano = surface!(ax_anomalies, lons, lats, anomalies, colorrange = limits_ano, colormap = cgrad(:bluesreds, categorical = false), highclip = :red, lowclip = :blue, shading = NoShading)
 
     cl = @lift($m_v * " (W m⁻²)")
     cb = Colorbar(fig[1, 3], colorrange = limits_p, label = cl, height = 300, tellheight = false)
